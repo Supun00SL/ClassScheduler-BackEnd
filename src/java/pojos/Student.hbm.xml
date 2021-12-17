@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2017 1:11:38 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="pojos.Student" table="student" catalog="classapp">
+        <id name="idstudent" type="java.lang.Integer">
+            <column name="idstudent" />
+            <generator class="identity" />
+        </id>
+        <property name="fname" type="string">
+            <column name="fname" length="45" />
+        </property>
+        <property name="lname" type="string">
+            <column name="lname" length="45" />
+        </property>
+        <property name="nic" type="string">
+            <column name="nic" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="mobile" length="45" />
+        </property>
+        <property name="telephone" type="string">
+            <column name="telephone" length="45" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="45" />
+        </property>
+        <property name="devicetoken" type="string">
+            <column name="devicetoken" length="300" />
+        </property>
+        <set name="chatlists" table="chatlist" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Chatlist" />
+        </set>
+        <set name="studentlogins" table="studentlogin" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Studentlogin" />
+        </set>
+        <set name="specialnotificationses" table="specialnotifications" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Specialnotifications" />
+        </set>
+        <set name="notificationlists" table="notificationlist" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Notificationlist" />
+        </set>
+        <set name="studentHasSubjectvisebatches" table="student_has_subjectvisebatch" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="student_idstudent" not-null="true" />
+            </key>
+            <one-to-many class="pojos.StudentHasSubjectvisebatch" />
+        </set>
+    </class>
+</hibernate-mapping>

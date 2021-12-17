@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2017 1:11:38 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="pojos.Lecturehall" table="lecturehall" catalog="classapp">
+        <id name="idlecturehall" type="java.lang.Integer">
+            <column name="idlecturehall" />
+            <generator class="identity" />
+        </id>
+        <property name="lecturehallnumber" type="string">
+            <column name="lecturehallnumber" length="45" />
+        </property>
+        <set name="examvivashedules" table="examvivashedule" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lecturehall_idlecturehall" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Examvivashedule" />
+        </set>
+        <set name="normalclassshedules" table="normalclassshedule" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="lecturehall_idlecturehall" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Normalclassshedule" />
+        </set>
+    </class>
+</hibernate-mapping>

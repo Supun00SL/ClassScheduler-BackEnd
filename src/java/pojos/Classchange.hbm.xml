@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2017 1:11:38 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="pojos.Classchange" table="classchange" catalog="classapp">
+        <id name="idclasschange" type="java.lang.Integer">
+            <column name="idclasschange" />
+            <generator class="identity" />
+        </id>
+        <property name="day" type="string">
+            <column name="day" length="45" />
+        </property>
+        <property name="datetime" type="timestamp">
+            <column name="datetime" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

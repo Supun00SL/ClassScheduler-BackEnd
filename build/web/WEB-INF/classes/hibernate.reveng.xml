@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="classapp"/>
+  <table-filter match-name="login"/>
+  <table-filter match-name="notificationlist"/>
+  <table-filter match-name="student_has_subjectvisebatch"/>
+  <table-filter match-name="chatlist"/>
+  <table-filter match-name="examvivashedule"/>
+  <table-filter match-name="chat"/>
+  <table-filter match-name="student"/>
+  <table-filter match-name="subject"/>
+  <table-filter match-name="studentlogin"/>
+  <table-filter match-name="lecturer"/>
+  <table-filter match-name="lecturehall"/>
+  <table-filter match-name="normalclassshedule"/>
+  <table-filter match-name="subjectvisebatch"/>
+  <table-filter match-name="classchange"/>
+  <table-filter match-name="specialnotifications"/>
+</hibernate-reverse-engineering>

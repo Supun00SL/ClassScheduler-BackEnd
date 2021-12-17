@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2017 1:11:38 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="pojos.Chatlist" table="chatlist" catalog="classapp">
+        <id name="idchatlist" type="java.lang.Integer">
+            <column name="idchatlist" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="lecturer" class="pojos.Lecturer" fetch="select">
+            <column name="lecturer_idlecturer" not-null="true" />
+        </many-to-one>
+        <many-to-one name="student" class="pojos.Student" fetch="select">
+            <column name="student_idstudent" not-null="true" />
+        </many-to-one>
+        <property name="lastmsgtime" type="timestamp">
+            <column name="lastmsgtime" length="19" />
+        </property>
+        <property name="msgcount" type="java.lang.Integer">
+            <column name="msgcount" />
+        </property>
+        <property name="lastmsgtext" type="string">
+            <column name="lastmsgtext" length="500" />
+        </property>
+        <property name="state" type="string">
+            <column name="state" length="45" />
+        </property>
+        <set name="chats" table="chat" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="chatlist_idchatlist" not-null="true" />
+            </key>
+            <one-to-many class="pojos.Chat" />
+        </set>
+    </class>
+</hibernate-mapping>
